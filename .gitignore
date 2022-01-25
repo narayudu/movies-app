@@ -1,3 +1,5 @@
 node_modules
-DevOpsChallenge
 .DS_Store
+docker-compose.yml
+Dockerfile
+.dockerignore
