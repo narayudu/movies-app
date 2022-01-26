@@ -30,7 +30,7 @@ If you have all the prerequisites installed you should verify if your MongoDB is
 $ cd movies-app
 $ cd backend
 $ yarn install
-$ nodemon index.js
+$ node index.js
 ```
 
 ```
