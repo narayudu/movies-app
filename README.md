@@ -14,7 +14,7 @@ Firstly, you should install
 
 ## Download
 
-You can download the folder on [this link](https://github.com/mathiasbuchner/movies-app.git).
+You can download the folder on [this link](https://github.com/mathiasbuchner/movies-app/archive/refs/heads/master.zip).
 
 If you have git installed on your PC, you just need do as follow:
 
