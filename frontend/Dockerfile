@@ -1,7 +1,7 @@
 FROM node:16
-WORKDIR /app
-COPY ./package.json ./
+WORKDIR /usr/app
+COPY package*.json ./
 RUN yarn install
-LABEL developer=rayudu
+COPY . .
 EXPOSE 3000
-CMD ["node", "server.js"]
+CMD ["node", "server.js"]                      
