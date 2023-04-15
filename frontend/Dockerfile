@@ -1,8 +1,8 @@
 FROM node:16
 WORKDIR /usr/app
 COPY package*.json ./
-COPY ./public ./public
-COPY ./src ./src
+COPY ./public ./
+COPY ./src ./
 COPY yarn.lock ./
 RUN yarn install
 COPY . .
