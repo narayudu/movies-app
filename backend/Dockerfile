@@ -9,4 +9,4 @@ COPY yarn.lock ./
 RUN yarn install
 COPY . .
 EXPOSE 3080
-CMD ["node", "server.js"]
+CMD ["yarn", "start"]
