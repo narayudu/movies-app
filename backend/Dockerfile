@@ -6,4 +6,4 @@ COPY index.js ./
 RUN yarn install
 COPY . .
 EXPOSE 3080
-CMD ["node", "index.js"]
+CMD ["yarn", "server.js"]
