@@ -1,10 +1,10 @@
 FROM node:16
 WORKDIR /usr/app
 COPY package*.json ./
-COPY ./server.js ./server.js
-COPY ./messageModel.js ./messageModel.js 
-COPY ./roomModel.js ./roomModel.js
-COPY ./userModel.js ./userModel.js
+COPY ./routes ./
+COPY ./models ./
+COPY ./db ./
+COPY ./controllers ./
 COPY yarn.lock ./
 RUN yarn install
 COPY . .
