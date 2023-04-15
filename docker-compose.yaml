@@ -29,11 +29,11 @@ services:
        -  ./backend/src:/usr/app/src
     depends_on:
       - mongodb
-    environment:
-      - MONGO_URI=${MONGO_URI}
       
   mongodb:
     image: mongo:4
+    ports:
+      - 27017:27017
     container_name: mongodb
     networks:
       - mean-stack-net
