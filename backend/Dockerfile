@@ -5,5 +5,5 @@ COPY index.js ./
 RUN npm install
 COPY . .
 EXPOSE 8080
-CMD ["npm", "index.js"]
+CMD ["node", "index.js"]
 
