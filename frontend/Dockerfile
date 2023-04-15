@@ -1,8 +1,8 @@
-FROM node:10.15.1 LTS
-WORKDIR /usr/app
+FROM node:14.15.1-alpine
+WORKDIR /app
 COPY package*.json ./
-COPY yarn.lock ./
-RUN yarn install
+RUN npm install
 COPY . .
 EXPOSE 3000
-CMD ["node", "server.js"]                  
+CMD ["npm", "start"]
+           
