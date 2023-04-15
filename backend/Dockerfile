@@ -1,6 +1,7 @@
 FROM node:16
 WORKDIR /usr/app
-COPY package*.json yarn.lock ./
+COPY package*.json ./
+COPY yan.lock ./
 RUN yarn install
 COPY . .
 EXPOSE 3080
