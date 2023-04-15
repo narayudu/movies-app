@@ -31,9 +31,9 @@ services:
        -  ./backend/models:/usr/app/models
        -  ./backend/routes:/usr/app/routes    
     depends_on:
-      - mongodb
+      - db
       
-  mongodb:
+  db:
     image: mongo:4
     ports:
       - 27017:27017
