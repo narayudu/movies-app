@@ -6,26 +6,44 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
      ports:
-      - "3000:3000"
+      - 3000:3000
+     container_name: frontend
+     networks:
+       -  mean-stack-net
+     volumes:
+       -  ./frontend/src:/usr/app/src
+       -  ./frontend/public:/usr/app/public 
      depends_on:
       - backend
+      
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - 8080:8080
+    container_name: backend
+    networks:
+       -  mean-stack-net
+    volumes:
+       -  ./backend/src:/usr/app/src
     depends_on:
       - mongodb
     environment:
       - MONGO_URI=${MONGO_URI}
+      
   mongodb:
     image: mongo:4
     container_name: mongodb
-    restart: always
-    environment:
-      - MONGO_INITDB_DATABASE=movies-app
+    networks:
+      - mean-stack-net
     volumes:
-      - mongodb_data:/data/db
+      - mongo-data:/data/db
+
+networks:
+  mean-stack-net:
+    driver: bridge
+
 volumes:
-  mongodb_data:
+  mongo-data:
+    driver: local
