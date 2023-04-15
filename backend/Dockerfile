@@ -6,4 +6,4 @@ COPY server.js ./
 RUN yarn install
 COPY . .
 EXPOSE 3080
-CMD ["yarn", "server.js"]
+CMD ["npm", "server.js"]
