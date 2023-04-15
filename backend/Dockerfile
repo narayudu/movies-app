@@ -1,8 +1,9 @@
-FROM node:10.15.1
-WORKDIR /usr/app
+FROM node:14.15.1-alpine
+WORKDIR /app
 COPY package*.json ./
-COPY yarn.lock ./
-RUN yarn install
+RUN npm install
 COPY . .
-EXPOSE 3080
-CMD ["yarn", "start"]
+ENV MONGO_URI=mongodb://mongodb:27017/movies-app
+EXPOSE 8080
+CMD ["npm", "start"]
+
