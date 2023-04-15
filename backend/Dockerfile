@@ -1,10 +1,6 @@
-FROM node:16
+FROM node:10.15.1
 WORKDIR /usr/app
 COPY package*.json ./
-COPY ./routes ./
-COPY ./models ./
-COPY ./db ./
-COPY ./controllers ./
 COPY yarn.lock ./
 RUN yarn install
 COPY . .
