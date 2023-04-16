@@ -26,7 +26,7 @@ services:
     networks:
        -  mean-stack-net
     volumes:
-       -  ./backend/db:/usr/app/db  
+       -  ./backend/src:/usr/app/src  
     depends_on:
       - db
       
