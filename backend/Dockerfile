@@ -1,6 +1,5 @@
 FROM node:14.15.1-alpine
 WORKDIR /usr/app
-COPY index.js ./
 COPY package*.json ./
 RUN npm install
 COPY . .
