@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -10,7 +10,7 @@
     "mongoose": "^5.7.5"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   }
 }
 
