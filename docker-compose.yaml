@@ -2,20 +2,20 @@ version: '3.8'
 
 services:
   frontend:
-     build:
+    build:
       context: ./frontend
       dockerfile: Dockerfile
-     ports:
+    ports:
       - 8000:8000
-     container_name: frontend
-     networks:
-       -  mean-stack-net
-     volumes:
-       -  ./frontend/src:/usr/app/src
-       -  ./frontend/public:/usr/app/public 
-     depends_on:
+    container_name: frontend
+    networks:
+      - mean-stack-net
+    volumes:
+      - ./frontend/src:/usr/app/src
+      - ./frontend/public:/usr/app/public
+    depends_on:
       - backend
-      
+
   backend:
     build:
       context: ./backend
@@ -24,12 +24,12 @@ services:
       - 8080:8080
     container_name: backend
     networks:
-       -  mean-stack-net
+      - mean-stack-net
     volumes:
-       -  ./backend/src:/usr/app/src  
+      - ./backend/src:/usr/app/src
     depends_on:
       - db
-      
+
   db:
     image: mongo:4
     ports:
@@ -40,6 +40,16 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  apache:
+    image: httpd
+    container_name: apache
+    volumes:
+      - ./apache-config:/usr/local/apache2/conf
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+
 networks:
   mean-stack-net:
     driver: bridge
@@ -47,3 +57,6 @@ networks:
 volumes:
   mongo-data:
     driver: local
+  apache-config:
+    driver: local
+
