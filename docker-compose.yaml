@@ -49,6 +49,8 @@ services:
       - 80:80
     depends_on:
       - backend
+    command: >
+      sh -c "cp /path/to/httpd.conf /usr/local/apache2/conf/httpd.conf && httpd-foreground"
 
 networks:
   mean-stack-net:
